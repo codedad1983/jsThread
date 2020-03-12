@@ -1,6 +1,6 @@
 # jsThread
 
-#Usage:
+# Usage:
 
 var i = 0;
 
