@@ -3,7 +3,7 @@
 # Usage
 
 
-1.Add bottom tag into <head> area of your html file
+1.Add bottom tag into `<head></head>` area of your html file
 ```
 <script type="text/javascript" src="js/jsthread.js"></script> 
 ```
