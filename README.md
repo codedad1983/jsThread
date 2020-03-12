@@ -2,6 +2,7 @@
 
 # Usage:
 
+```
 var i = 0;
 
 var thread = jsThread.createThread(function(p) { // this function will work in web worker
@@ -24,3 +25,7 @@ callThread(thread, 4).then(function(result) {
 });
 
 endThread(thread);
+```
+
+# License
+MIT License
