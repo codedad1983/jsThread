@@ -3,11 +3,10 @@
 # Usage
 
 
-1.Add 
+1.Add bottom tag into <head></head> area of your html file
 ```
 <script type="text/javascript" src="js/jsthread.js"></script> 
 ```
-into <head></head> area of your html file
 
 2.Make your own thead process
 ```
