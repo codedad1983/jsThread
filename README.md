@@ -1,8 +1,18 @@
 # jsThread
 
-# Usage:
+# Usage
 
+
+1.Add 
 ```
+<script type="text/javascript" src="js/jsthread.js"></script> 
+```
+into <head></head> area of your html file
+
+2.Make your own thead process
+```
+<script type="text/javascript">
+
 var i = 0;
 
 var thread = jsThread.createThread(function(p) { // this function will work in web worker
@@ -17,14 +27,16 @@ var thread = jsThread.createThread(function(p) { // this function will work in w
     };
 }, ['js/dependency1.js', 'js/dependency2.js'], i);
 
-callThread(thread, 4).then(function(result) {
+jsThread.callThread(thread, 4).then(function(result) {
     // result = 1 + 2 + 3 + 4 = 10
 }).catch(function(err) {
     // error
     alert(err);
 });
 
-endThread(thread);
+jsThread.endThread(thread);
+
+</script>
 ```
 
 # License
