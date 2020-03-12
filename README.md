@@ -1,13 +1,15 @@
 # jsThread
 
+#Usage:
+
 var i = 0;
 
 var thread = jsThread.createThread(function(p) { // this function will work in web worker
-    // init
+    // init here
     // var a = 1;
     // var b = 2;
     // and something else ...
-    return function(v) {
+    return function(v) { // this function can be called by callThread
         // process and return data
         var c = 3;
         return a + b + c + v;
