@@ -20,18 +20,18 @@
 
         var blob = new Blob(['\'use strict\';' + global.join('') + '(' + function(f) {
             self.onmessage = function(e) {
-                var ff = f(e.data);
-                if (typeof(ff) == 'function') {
-                    self.onmessage = function(e) {
-                        var result = ff(e.data);
-                        // self.postMessage(result);
-                        Promise.resolve(result).then(function(v) {
-                            self.postMessage(v);
-                        });
-                    };
-                } else {
-                    self.onmessage = null;
-                }
+                var callable = f(e.data);
+                Promise.resolve(callable).then(function(f) {
+                    if (typeof(f) == 'function') {
+                        self.onmessage = function(e) {
+                            var result = f(e.data);
+                            // self.postMessage(result);
+                            Promise.resolve(result).then(function(v) {
+                                self.postMessage(v);
+                            });
+                        };
+                    }
+                });
             };
         } + ')(' + init + ');'], {
             type: "text/javascript"
